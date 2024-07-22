@@ -1,20 +1,18 @@
 struct a_struct {
-    bool a;
-    unsigned int b;
-    bool c;
+    bool b_1, b_2, b_3;
+    unsigned int cv_1, cv_2, cv_3;
+    unsigned int cav_1, cav_2, cav_3;
     unsigned int d;
-    unsigned int e;
-    unsigned int f;
 };
 
 void some_func(a_struct &a) {
-    if (a.a & (8U == (0x1f & a.b))) {
-        a.d = a.e;
+    if (a.b_1 & (8U == (0x1f & a.cv_1))) [[unlikely]] {
+        a.d = a.cav_1;
     }
-    else if (a.c & (7U == (0x1f & a.b))) {
-        a.d = a.e;
+    else if (a.b_2 & (7U == (0x1f & a.cv_2))) [[unlikely]] {
+        a.d = a.cav_2 ;
     }
-    else if (a.c & (6U == (0x1f & a.b))) {
-        a.d = a.f;
+    else if (a.b_3 & (6U == (0x1f & a.cv_3))) [[unlikely]] {
+        a.d = a.cav_3;
     }
 }
