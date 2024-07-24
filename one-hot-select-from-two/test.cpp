@@ -19,7 +19,7 @@ struct a_struct {
 };
 
 void some_func(a_struct &a) {
-    if (a.value) {
+    if (a.some_cond) {
         /* Try remove this block */
         a.value = ( a.use_0 ? a.value_0_b : 0) | 
                   ( a.use_1 ? a.value_1_b : 0) | 
